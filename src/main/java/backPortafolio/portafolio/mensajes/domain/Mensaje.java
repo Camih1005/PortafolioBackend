@@ -30,11 +30,14 @@ public class Mensaje {
     @Column(columnDefinition = "text")
     private String mensaje;
 
-    private LocalDateTime fechaupdate; 
-
+    private LocalDateTime fechaupdate;
+    @Column(columnDefinition = "default false")
+    private boolean visto; // Asegúrate de que este campo es booleano
 
     @PrePersist
     protected void onCreate() {
         fechaupdate = LocalDateTime.now(); 
+        visto = false; // Inicializa como no visto al crear un mensaje
     }
 }
+
