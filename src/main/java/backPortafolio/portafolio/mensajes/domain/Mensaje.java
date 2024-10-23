@@ -31,7 +31,7 @@ public class Mensaje {
     private String mensaje;
 
     private LocalDateTime fechaupdate;
-    @Column(columnDefinition = "default false")
+    
     private boolean visto; // Asegúrate de que este campo es booleano
 
     @PrePersist
