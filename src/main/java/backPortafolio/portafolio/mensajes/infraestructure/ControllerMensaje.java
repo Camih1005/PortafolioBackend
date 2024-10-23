@@ -30,7 +30,7 @@ public class ControllerMensaje {
 
     @PostMapping("/mensaje")
     public Mensaje enviarMensaje(@RequestBody Mensaje mensaje) {
-        mensaje.setVisto(false); // Asegúrate de establecer visto como false
+        mensaje.setVisto(false);
         return servicio.enviarMensaje(mensaje);
     }
     
@@ -46,8 +46,8 @@ public class ControllerMensaje {
 
         if (mensajeOptional.isPresent()) {
             Mensaje mensaje = mensajeOptional.get();
-            mensaje.setVisto(true); // Marcar como visto
-            repositoryMensaje.save(mensaje); // Guardar cambios
+            mensaje.setVisto(true); 
+            repositoryMensaje.save(mensaje); 
             return ResponseEntity.ok(mensaje);
         } else {
             return ResponseEntity.notFound().build();

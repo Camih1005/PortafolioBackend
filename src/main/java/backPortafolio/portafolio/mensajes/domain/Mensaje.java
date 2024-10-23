@@ -32,12 +32,12 @@ public class Mensaje {
 
     private LocalDateTime fechaupdate;
     
-    private boolean visto; // Asegúrate de que este campo es booleano
+    private boolean visto; 
 
     @PrePersist
     protected void onCreate() {
         fechaupdate = LocalDateTime.now(); 
-        visto = false; // Inicializa como no visto al crear un mensaje
+        visto = false; 
     }
 }
 

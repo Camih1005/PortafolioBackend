@@ -22,8 +22,7 @@ public class AuthUserController {
         Optional<User> user = userRepository.findByUser(loginRequest.getUser());
         
         if (user.isPresent() && user.get().getContraseña().equals(loginRequest.getContraseña())) {
-            // Aquí puedes generar un token JWT o usar una sesión básica
-            // Para un ejemplo simple, devolvemos un mensaje de éxito.
+          
             return ResponseEntity.ok("Login exitoso");
         } else {
             return ResponseEntity.status(401).body("Credenciales inválidas");
